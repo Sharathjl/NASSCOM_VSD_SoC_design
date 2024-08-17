@@ -86,6 +86,45 @@ Calculation:
 ![calculator](https://github.com/user-attachments/assets/87f6709d-8124-4774-9fb6-1fb1ce267d9a)
 
 
+#Day 2
+
+## Good FloorPlan Vs Bad FloorPlan and Introduction to Library Cells
+
+Chip FloorPlanning Considerations:
+![fl1](https://github.com/user-attachments/assets/6a0a9969-5ec0-4592-badd-fe4a1149e1be)
+
+
+Utilization Factor and Aspect Ratio
+
+To determine the Utilization Factor and Aspect Ratio, it's essential to first understand how the height and width of the core and die areas are defined.
+
+The core is the region within a chip designated for placing all the logic cells and components. It is where the primary logic of the chip resides.
+
+The die is the area surrounding the core, used for placing I/O-related components.
+![fl2](https://github.com/user-attachments/assets/056d1340-6a46-408d-bfe3-d1a16f209785)
+
+
+The height and width of the core area are determined by the design’s netlist, which is based on the number of components required to implement the logic. Consequently, the height and width of the die area will depend on the dimensions of the core area.
+
+![fl3](https://github.com/user-attachments/assets/4e2edfe0-f776-43ef-9b28-11d797b50a53)
+
+
+Utilization Factor: The Utilization Factor is defined as "The ratio of the core area occupied by the netlist to the total core area." For an optimal FloorPlan, the Utilization Factor should never be '1' because if it reaches '1', there will be no room for adding additional logic if needed, which would result in a poor FloorPlan.
+
+Utilization Factor = (Area occupied by netlist / Total core area)
+
+Aspect Ratio: The Aspect Ratio is defined as "The ratio of the height of the core to the width of the core." If the Aspect Ratio is '1', the core is considered to be square-shaped; if it is other than '1', the core will have a rectangular shape.
+
+Aspect Ratio = (Height of the core / Width of the core)
+
+
+
+
+
+
+
+
+
      
     
 
