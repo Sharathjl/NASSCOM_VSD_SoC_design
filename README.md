@@ -320,16 +320,68 @@ To launch the Magic tool, use the following command:
 ![rules](https://github.com/user-attachments/assets/257cb006-ac28-45e2-aeae-0426392fe84e)
 
 
+# Day 4: Pre-Layout Timing Analysis and the Importance of a Good Clock Tree
+
+## Timing Modeling Using Delay Tables and Converting Grid Information to Track Information
+
+In this section, we'll delve into the process of timing modeling through delay tables and the method of converting grid information into track information. Let's break it down into manageable steps:
+
+### Timing Modeling with Delay Tables
+
+1. **Delay Tables:**
+   - Delay tables serve as a reference for understanding the signal propagation delay through various design elements such as gates, wires, and interconnects.
+   - These tables are crucial for estimating the arrival times of signals, which is essential for maintaining proper timing within the design.
+
+2. **Application:**
+   - In the physical design phase, delay tables are utilized to model the timing behavior of standard cells, macros, and other components.
+   - They assist placement and routing tools in optimizing signal paths, aiding in achieving timing closure.
+# LAB 4
+![p1](https://github.com/user-attachments/assets/e16070ee-b50f-4440-9abb-49834b659074)
+# Get syntax for grid command
+    help grid
+
+    # Set grid values accordingly
+    grid 0.46um 0.34um 0.23um 0.17um
+
+![p4](https://github.com/user-attachments/assets/3750d5e5-da32-40b2-ac50-d3bfe7a8fb33)
+
+![p2](https://github.com/user-attachments/assets/a139fb2e-8b48-44bb-a526-ba8b485d6a95)
+
+![WhatsApp Image 2024-08-25 at 16 47 20_b67f42a9](https://github.com/user-attachments/assets/2658b8c0-ab15-4baf-ad8d-9371b1c17dd0)
+
+# Command to write LEF from the layout in tkcon window
+    lef write
+![p5](https://github.com/user-attachments/assets/4e215558-3588-4cfb-831f-fe161d0c7fa2)
+
+![p6](https://github.com/user-attachments/assets/f95bfad3-8695-4dac-8453-dd97bd3639a2)
+
+![p7](https://github.com/user-attachments/assets/b9ec0a0e-9562-4fa2-a6df-5451968fb564)
 
 
+ set ::env(LIB_SYNTH) "$::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc_hd__typical.lib"
 
-
-
-
-
-
-
+     set ::env(LIB_FASTEST) "$::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc_hd__fast.lib"
      
-    
+     set ::env(LIB_SLOWEST) "$::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc_hd__slow.lib" 
+
+     set ::env(LIB_TYPICAL) "$::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc_hd__typical.lib"
+
+     set ::env(EXTRA_LEFS) [glob $::env(OPENLANE_ROOT)/designs/$::env(DESIGN_NAME)/src/*.lef]
+
+
+Floorplan failed,so:
+
+       init_floorplan
+       place_io
+       tap_decap_or
+
+After run_placement:
+![p8](https://github.com/user-attachments/assets/567d9561-c43f-42d2-bcca-a2704cb21eaf)
+
+![p9](https://github.com/user-attachments/assets/ad7cf7ba-6df3-4488-9683-28e286e9b169)
+
+![p10](https://github.com/user-attachments/assets/9d263391-5ca0-4a27-a28d-6f454fa5e9f4)
+
+# DAY 5
 
 
